@@ -54,3 +54,31 @@ window.addEventListener("pointerdown", function startMusic() {
     window.removeEventListener("pointerdown", startMusic);
 
 }, { once: true });
+
+
+// 
+// Minecraft Splashes
+// 
+
+const splash = document.getElementById("splash");
+
+fetch("texts/splashes.txt")
+    .then(response => response.text())
+    .then(text => {
+
+        const splashes = text
+            .split(/\r?\n/)
+            .map(line => line.trim())
+            .filter(line => line.length > 0);
+
+        const random =
+            splashes[Math.floor(Math.random() * splashes.length)];
+
+        splash.textContent = random;
+
+    })
+    .catch(() => {
+
+        splash.textContent = "missingno";
+
+    });
