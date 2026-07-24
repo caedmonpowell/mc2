@@ -122,3 +122,40 @@ html, body {
     background-image:url("../images/panorama/panorama_4.png");
 
 }
+
+/*          MENU             */
+
+#menu{
+
+    position:fixed;
+
+    left:50%;
+    top:0;
+
+    width:100%;
+
+    transform:translateX(-50%);
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    pointer-events:none;
+
+    z-index:100;
+
+}
+
+#logo{
+
+    width:min(820px,58vw);
+
+    margin-top:58px;
+
+    image-rendering:pixelated;
+
+    user-select:none;
+
+}
