@@ -127,57 +127,91 @@ html, body {
 
 #menu{
 
-    position: fixed;
+    position:fixed;
 
-    inset: 0;
+    inset:0;
 
-    z-index: 100;
+    pointer-events:none;
 
-    pointer-events: none;
+    z-index:100;
 
 }
+
+/* Logo */
 
 #logo{
 
-    position: absolute;
+    position:absolute;
 
-    left: 50%;
-    top: 32px;
+    left:50%;
 
-    width: 620px;
-    height: auto;
+    top:28px;
 
-    transform: translateX(-50%);
+    width:660px;
 
-    image-rendering: pixelated;
+    transform:translateX(-50%);
 
-    user-select: none;
-    pointer-events: none;
+    image-rendering:pixelated;
 
 }
+
+/* Splash */
+
 #splash{
 
     position:absolute;
 
+    left:50%;
+
     top:88px;
-    left:calc(50% + 165px);
 
-    font-family:sans-serif;
+    margin-left:140px;
 
-    font-size:28px;
+    color:#ffff00;
+
+    font-family:Arial,sans-serif;
+
+    font-size:30px;
 
     font-weight:bold;
 
-    color:#FFFF00;
-
-    text-shadow:
-        2px 2px 0px rgba(0,0,0,.5);
+    text-shadow:2px 2px black;
 
     transform:rotate(-20deg);
 
-    animation:splash 0.5s ease-in-out infinite alternate;
+    animation:splash .5s infinite alternate ease-in-out;
 
-    transform-origin:center;
+}
+
+/* Bottom Left */
+
+#version{
+
+    position:absolute;
+
+    left:4px;
+
+    bottom:4px;
+
+    color:white;
+
+    font-size:16px;
+
+}
+
+/* Bottom Right */
+
+#copyright{
+
+    position:absolute;
+
+    right:4px;
+
+    bottom:4px;
+
+    color:white;
+
+    font-size:16px;
 
 }
 
@@ -191,7 +225,7 @@ html, body {
 
     to{
 
-        transform:rotate(-20deg) scale(1.06);
+        transform:rotate(-20deg) scale(1.08);
 
     }
 
