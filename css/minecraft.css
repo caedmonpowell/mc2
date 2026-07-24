@@ -162,10 +162,9 @@ html, body {
     position:absolute;
 
     left:50%;
+    top:92px;
 
-    top:88px;
-
-    margin-left:140px;
+    margin-left:155px;
 
     color:#ffff00;
 
@@ -177,9 +176,9 @@ html, body {
 
     text-shadow:2px 2px black;
 
-    transform:rotate(-20deg);
+    transform-origin:center;
 
-    animation:splash .5s infinite alternate ease-in-out;
+    pointer-events:none;
 
 }
 
