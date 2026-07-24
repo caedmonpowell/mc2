@@ -20,9 +20,9 @@ function animate() {
 animate();
 
 
-// =====================
+
 // Menu Music
-// =====================
+
 
 const music = document.getElementById("menuMusic");
 
