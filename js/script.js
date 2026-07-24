@@ -20,9 +20,9 @@ function animate() {
 animate();
 
 
-// --------------------
+// =====================
 // Menu Music
-// --------------------
+// =====================
 
 const music = document.getElementById("menuMusic");
 
@@ -35,23 +35,22 @@ const songs = [
 
 function playRandomSong() {
 
-    const random = Math.floor(Math.random() * songs.length);
+    const index = Math.floor(Math.random() * songs.length);
 
-    music.src = songs[random];
+    music.src = songs[index];
+    music.volume = 0.30;
 
-    music.volume = 0.25;      // 25% volume
-
-    music.play();
+    music.play().catch(() => {});
 
 }
 
 music.addEventListener("ended", playRandomSong);
 
-// Browsers block autoplay until user interaction.
-window.addEventListener("click", function startMusic() {
+// browsers require interaction before audio starts
+window.addEventListener("pointerdown", function startMusic() {
 
     playRandomSong();
 
-    window.removeEventListener("click", startMusic);
+    window.removeEventListener("pointerdown", startMusic);
 
 }, { once: true });
