@@ -150,18 +150,17 @@ html, body {
 
 #logo{
 
-    width:610px;
-    height:auto;
+    width: 680px;
+    height: auto;
 
-    margin-top:25px;
+    margin-top: 42px;
 
-    image-rendering:pixelated;
+    image-rendering: pixelated;
 
-    user-select:none;
-    pointer-events:none;
+    user-select: none;
+    pointer-events: none;
 
 }
-
 #splash{
 
     position:absolute;
