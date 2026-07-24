@@ -139,10 +139,15 @@ html, body {
 
 #logo{
 
-    width: 680px;
+    position: absolute;
+
+    left: 50%;
+    top: 32px;
+
+    width: 620px;
     height: auto;
 
-    margin-top: 42px;
+    transform: translateX(-50%);
 
     image-rendering: pixelated;
 
