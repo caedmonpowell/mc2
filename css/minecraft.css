@@ -150,12 +150,14 @@ html, body {
 
 #logo{
 
-    width:min(820px,58vw);
+    width:610px;
+    height:auto;
 
-    margin-top:58px;
+    margin-top:25px;
 
     image-rendering:pixelated;
 
     user-select:none;
+    pointer-events:none;
 
 }
