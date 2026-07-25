@@ -1,9 +1,4 @@
-/* ================================================= */
-/*              Minecraft 1.8 Menu                   */
-/* ================================================= */
-
-html,
-body{
+html, body {
 
     margin:0;
     padding:0;
@@ -13,358 +8,170 @@ body{
 
     overflow:hidden;
 
-    background:#000;
-
-    image-rendering:pixelated;
-
-    font-family:Arial,sans-serif;
+    background:black;
 
 }
 
 
-/* ================================================= */
-/*                  PANORAMA                         */
-/* ================================================= */
+#panorama {
 
-#panorama{
+    position: fixed;
 
-    position:fixed;
+    width: 100vw;
+    height: 100vh;
 
-    inset:0;
+    perspective: 1000px;
 
-    perspective:1000px;
-
-    overflow:hidden;
+    overflow: hidden;
 
 }
 
+#cube {
 
-#cube{
+    position: absolute;
 
-    position:absolute;
+    left: 50%;
+    top: 50%;
 
-    left:50%;
-    top:50%;
+    width: 2048px;
+    height: 2048px;
 
-    width:2048px;
-    height:2048px;
-
-    transform-style:preserve-3d;
-
-}
-
-
-.face{
-
-    position:absolute;
-
-    width:2048px;
-    height:2048px;
-
-    background-size:cover;
-    background-repeat:no-repeat;
-
-    backface-visibility:hidden;
+    transform-style: preserve-3d;
 
 }
 
+.face {
 
-/* Cube Faces */
+    position: absolute;
 
-.front{
+    width: 2048px;
+    height: 2048px;
 
-    background-image:url("../images/panorama/panorama_0.png");
+    background-size: cover;
+    background-repeat: no-repeat;
 
-    transform:
-        translateZ(-1024px);
-
-}
-
-
-.back{
-
-    background-image:url("../images/panorama/panorama_2.png");
-
-    transform:
-        rotateY(180deg)
-        translateZ(-1024px);
+    backface-visibility: hidden;
 
 }
 
+.front {
 
-.left{
+    transform: translateZ(-1024px);
 
-    background-image:url("../images/panorama/panorama_1.png");
-
-    transform:
-        rotateY(-90deg)
-        translateZ(-1024px);
+    background-image: url("../images/panorama/panorama_0.png");
 
 }
 
-
-.right{
-
-    background-image:url("../images/panorama/panorama_3.png");
+.right {
 
     transform:
         rotateY(90deg)
         translateZ(-1024px);
 
+    background-image: url("../images/panorama/panorama_3.png");
+
 }
 
+.back {
 
-.top{
+    transform:
+        rotateY(180deg)
+        translateZ(-1024px);
 
-    background-image:url("../images/panorama/panorama_5.png");
+    background-image: url("../images/panorama/panorama_2.png");
+
+}
+
+.left {
+
+    transform:
+        rotateY(-90deg)
+        translateZ(-1024px);
+
+    background-image: url("../images/panorama/panorama_1.png");
+
+}
+
+.top {
 
     transform:
         rotateX(90deg)
         translateZ(-1024px);
 
+    background-image: url("../images/panorama/panorama_5.png");
+
 }
 
-
-.bottom{
-
-    background-image:url("../images/panorama/panorama_4.png");
+.bottom {
 
     transform:
         rotateX(-90deg)
         translateZ(-1024px);
 
+    background-image: url("../images/panorama/panorama_4.png");
+
 }
 
+/*          MENU             */
 
-
-/* ================================================= */
-/*                    GUI                            */
-/* ================================================= */
-
-#gui{
+#menu{
 
     position:fixed;
 
     inset:0;
 
-    z-index:100;
-
     pointer-events:none;
+
+    z-index:100;
 
 }
 
-
-
-/* ================================================= */
-/*                    LOGO                           */
-/* ================================================= */
+/* Logo */
 
 #logo{
 
     position:absolute;
 
     left:50%;
-    top:34px;
 
-    width:690px;
+    top:28px;
+
+    width:660px;
 
     transform:translateX(-50%);
 
     image-rendering:pixelated;
 
-    user-select:none;
-
 }
 
-
-
-/* ================================================= */
-/*                   SPLASH                          */
-/* ================================================= */
+/* Splash */
 
 #splash{
 
     position:absolute;
 
     left:50%;
-    top:100px;
+    top:92px;
 
-    margin-left:170px;
+    margin-left:155px;
 
-    color:#FFFF00;
+    color:#ffff00;
+
+    font-family:Arial,sans-serif;
 
     font-size:30px;
+
     font-weight:bold;
-
-    transform:rotate(-20deg);
-
-    text-shadow:
-
-        2px 2px #000;
-
-}
-
-
-
-/* ================================================= */
-/*                    MENU                           */
-/* ================================================= */
-
-#menu{
-
-    position:absolute;
-
-    left:50%;
-
-    top:400px;
-
-    width:400px;
-
-    transform:translateX(-50%);
-
-}
-
-
-
-/* ================================================= */
-/*                 BUTTONS                           */
-/* ================================================= */
-
-#menu{
-
-    position:absolute;
-
-    left:50%;
-    top:370px;
-
-    width:400px;
-
-    transform:translateX(-50%);
-
-}
-
-.mc-button{
-
-    position:relative;
-
-    width:400px;
-    height:40px;
-
-    margin-bottom:12px;
-
-    cursor:pointer;
-
-    pointer-events:auto;
-
-    user-select:none;
-
-}
-
-.mc-button::before,
-.mc-button::after{
-
-    content:"";
-
-    position:absolute;
-
-    top:0;
-
-    width:50%;
-    height:100%;
-
-    background-image:url("../images/gui/widgets.png");
-
-    background-repeat:no-repeat;
-
-    image-rendering:pixelated;
-
-}
-
-/* Left Half */
-
-.mc-button::before{
-
-    left:0;
-
-    background-position:left top;
-    background-size:512px 512px;
-
-}
-
-/* Right Half */
-
-.mc-button::after{
-
-    right:0;
-
-    background-position:right top;
-    background-size:512px 512px;
-
-}
-
-/* Hover */
-
-.mc-button.hover::before,
-.mc-button.hover::after{
-
-    background-position-y:-40px;
-
-}
-
-/* Pressed */
-
-.mc-button.pressed{
-
-    transform:translateY(1px);
-
-}
-
-.button-text{
-
-    position:absolute;
-
-    inset:0;
-
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-
-    color:white;
-
-    font-size:18px;
 
     text-shadow:2px 2px black;
 
-    z-index:2;
+    transform-origin:center;
+
+    pointer-events:none;
 
 }
 
-.mc-button.pressed .button-text{
-
-    transform:translateY(1px);
-
-}
-
-#bottomButtons{
-
-    display:flex;
-
-    justify-content:space-between;
-
-}
-
-.half{
-
-    width:194px;
-
-}
-
-
-
-/* ================================================= */
-/*               VERSION TEXT                        */
-/* ================================================= */
+/* Bottom Left */
 
 #version{
 
@@ -380,11 +187,7 @@ body{
 
 }
 
-
-
-/* ================================================= */
-/*             COPYRIGHT                             */
-/* ================================================= */
+/* Bottom Right */
 
 #copyright{
 
@@ -397,5 +200,21 @@ body{
     color:white;
 
     font-size:16px;
+
+}
+
+@keyframes splash{
+
+    from{
+
+        transform:rotate(-20deg) scale(1);
+
+    }
+
+    to{
+
+        transform:rotate(-20deg) scale(1.08);
+
+    }
 
 }
