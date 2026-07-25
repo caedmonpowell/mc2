@@ -4,15 +4,21 @@
 <head>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>Minecraft 1.8</title>
 
-    <link rel="stylesheet" href="css/minecraft.css">
+    <link rel="stylesheet"
+          href="css/minecraft.css">
 
 </head>
 
 <body>
+
+    <!-- ========================= -->
+    <!-- Panorama                  -->
+    <!-- ========================= -->
 
     <div id="panorama">
 
@@ -28,58 +34,129 @@
         </div>
 
     </div>
-    
-   <div id="menu">
 
-    <img
-        id="logo"
-        src="images/gui/minecraft_logo.png"
-        alt="Minecraft"
-    >
 
-    <div id="splash">missingno</div>
+    <!-- ========================= -->
+    <!-- GUI                       -->
+    <!-- ========================= -->
 
-    <div id="buttons">
+    <div id="gui">
 
-        <div class="mc-button">
-            Singleplayer
+        <!-- Logo -->
+
+        <img
+            id="logo"
+            src="images/gui/minecraft_logo.png"
+            alt="Minecraft">
+
+
+        <!-- Splash -->
+
+        <div id="splash">
+
+            missingno
+
         </div>
 
-        <div class="mc-button">
-            Multiplayer
-        </div>
 
-        <div class="mc-button">
-            Minecraft Realms
-        </div>
+        <!-- Main Menu -->
 
-        <div id="buttonRow">
+        <div id="menu">
 
-            <div class="mc-button half">
-                Options...
+            <div class="mc-button"
+                 id="singleplayer">
+
+                Singleplayer
+
             </div>
 
-            <div class="mc-button half">
-                Quit Game
+
+            <div class="mc-button"
+                 id="multiplayer">
+
+                Multiplayer
+
             </div>
+
+
+            <div class="mc-button"
+                 id="realms">
+
+                Minecraft Realms
+
+            </div>
+
+
+            <div id="bottomButtons">
+
+                <div class="mc-button half"
+                     id="options">
+
+                    Options...
+
+                </div>
+
+
+                <div class="mc-button half"
+                     id="quit">
+
+                    Quit Game
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Bottom Left -->
+
+        <div id="version">
+
+            Minecraft 1.8
+
+        </div>
+
+
+        <!-- Bottom Right -->
+
+        <div id="copyright">
+
+            Copyright Mojang AB. Do not distribute!
 
         </div>
 
     </div>
 
-    <div id="version">
-        Minecraft 1.8
-    </div>
 
-    <div id="copyright">
-        Copyright Mojang AB. Do not distribute!
-    </div>
+    <!-- ========================= -->
+    <!-- Audio                      -->
+    <!-- ========================= -->
 
-</div>
-    
     <audio id="menuMusic"></audio>
 
-    <script src="js/script.js"></script>
+    <audio id="clickSound">
+
+        <source
+            src="sounds/click.ogg"
+            type="audio/ogg">
+
+    </audio>
+
+
+    <!-- ========================= -->
+    <!-- JavaScript                 -->
+    <!-- ========================= -->
+
+    <script src="js/panorama.js"></script>
+
+    <script src="js/gui.js"></script>
+
+    <script src="js/audio.js"></script>
+
+    <script src="js/splash.js"></script>
+
+    <script src="js/main.js"></script>
 
 </body>
 
